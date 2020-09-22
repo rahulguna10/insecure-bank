@@ -1,13 +1,9 @@
 ---
 connectors:
-- connector_name: jira
+- connector_name: slack
   fields:
-    projectkey: STAR
-    url: https://rahulguna.atlassian.net
-    issuetype: Bug
-    assignee: Rahul Gunasekaran
-    username: rahulguna10@gmail.com
-    authtoken: 9U70uPMVmsIsJ2oc9u8x10C2
+    channelidentifier: {{SLACK_CHANNEL_ID}}
+    bearertoken: {{SLACK_TOKEN}}
 ---
 buildbreaker:
 - activityname: sast
@@ -43,6 +39,6 @@ tool_information:
 - tool_name: polaris
   enabled: true
   fields:
-    project_name: insecure-bank
-    instance_url: https://csprod.polaris.synopsys.com
-    auth_token: erbsrhcmj513j678hil89j5nsesqfvventnj8o9gin0l9stmjv20
+    project_name: {{POLARIS_PROJECT_NAME}}
+    instance_url: {{POLARIS_URL}}
+    auth_token: {{POLARIS_TOKEN}}
