@@ -64,3 +64,6 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
+      
+    - name: Run Workflow Engine
+      run: java -jar ${{github.workspace}}/workflow_engine/workflowclient.jar --workflowengine.url="${{secrets.WORKFLOWENGINE_URL}}" --workflowengine.token="${{secrets.WORKFLOWENGINE_TOKEN}}" --app.manifest.path=${{github.workspace}}/workflow_engine/app.yml --sec.manifest.path=${{github.workspace}}/workflow_engine/workflow.yml
