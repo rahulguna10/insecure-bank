@@ -1,5 +1,11 @@
 export WORKFLOW_TEMPLATE_PATH="${1}/workflow_engine/workflow-template.yml"
 
+echo SLACK_CHANNEL_ID
+echo $SLACK_CHANNEL_ID
+
+echo POLARIS_PROJECT_NAME
+echo $POLARIS_PROJECT_NAME
+
 workflow=$(cat $WORKFLOW_TEMPLATE_PATH | \
 sed "s~{{SLACK_CHANNEL_ID}}~$SLACK_CHANNEL_ID~g; \
 s~{{SLACK_TOKEN}}~$SLACK_TOKEN~g; \
