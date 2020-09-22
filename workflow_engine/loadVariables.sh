@@ -1,19 +1,11 @@
 export WORKFLOW_TEMPLATE_PATH="${1}/workflow_engine/workflow-template.yml"
 
-echo SLACK_CHANNEL_ID
-echo ${SLACK_CHANNEL_ID}
-echo ${{SLACK_CHANNEL_ID}}
-echo $SLACK_CHANNEL_ID
-
-echo POLARIS_PROJECT_NAME
-echo $POLARIS_PROJECT_NAME
-
 workflow=$(cat $WORKFLOW_TEMPLATE_PATH | \
-sed "s~{{SLACK_CHANNEL_ID}}~$SLACK_CHANNEL_ID~g; \
-s~{{SLACK_TOKEN}}~$SLACK_TOKEN~g; \
-s~{{POLARIS_PROJECT_NAME}}~$POLARIS_PROJECT_NAME~g; \
-s~{{POLARIS_URL}}~$POLARIS_URL~g; \
-s~{{POLARIS_TOKEN}}~$POLARIS_TOKEN~g")
+sed "s~{{SLACK_CHANNEL_ID}}~${2}~g; \
+s~{{SLACK_TOKEN}}~${3}~g; \
+s~{{POLARIS_PROJECT_NAME}}~${4}~g; \
+s~{{POLARIS_URL}}~${5}~g; \
+s~{{POLARIS_TOKEN}}~${6}~g")
 
 # apply the yml with the substituted value
 echo "$workflow" > ${1}/workflow_engine/workflow.yml
