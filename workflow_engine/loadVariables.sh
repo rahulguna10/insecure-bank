@@ -1,6 +1,8 @@
 export WORKFLOW_TEMPLATE_PATH="${1}/workflow_engine/workflow-template.yml"
 
 echo SLACK_CHANNEL_ID
+echo ${SLACK_CHANNEL_ID}
+echo ${{SLACK_CHANNEL_ID}}
 echo $SLACK_CHANNEL_ID
 
 echo POLARIS_PROJECT_NAME
