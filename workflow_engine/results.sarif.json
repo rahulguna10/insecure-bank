@@ -3,83 +3,173 @@
   "version": "2.1.0",
   "runs": [
     {
+      "results": [
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "startLine": "143"
+                },
+                "artifactLocation": {
+                  "uri": "src/main/java/com/example/controllers/DashboardController.java"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "A tainted value \"file.getInputStream()\" is deserialized. This may allow an attacker to bypass security checks or execute arbitrary code."
+          },
+          "ruleId": "502"
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "startLine": "147"
+                },
+                "artifactLocation": {
+                  "uri": "src/main/java/com/example/controllers/DashboardController.java"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Concatenating \"file.getOriginalFilename()\" to an HTML page allows cross-site scripting, because it was not properly sanitized for context HTML PCDATA block."
+          },
+          "ruleId": "79"
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "startLine": "65"
+                },
+                "artifactLocation": {
+                  "uri": "src/main/java/com/example/controllers/TransferController.java"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "\"com.example.controllers.TransferController.transfer\" is a web-app entry point that requires protection from cross-site request forgery (CSRF)."
+          },
+          "ruleId": "352"
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "startLine": "123"
+                },
+                "artifactLocation": {
+                  "uri": "src/main/java/com/example/controllers/TransferController.java"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "\"com.example.controllers.TransferController.transferCheck\" is a web-app entry point that requires protection from cross-site request forgery (CSRF)."
+          },
+          "ruleId": "352"
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "startLine": "40"
+                },
+                "artifactLocation": {
+                  "uri": "src/main/java/com/example/dao/AccountDaoImpl.java"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Insecure concatenation of a SQL statement. The value \"username\" is tainted."
+          },
+          "ruleId": "89"
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "startLine": "20"
+                },
+                "artifactLocation": {
+                  "uri": "src/main/java/com/example/dao/ActivityDaoImpl.java"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Insecure concatenation of a SQL statement. The value \"number\" is tainted."
+          },
+          "ruleId": "89"
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "startLine": "18"
+                },
+                "artifactLocation": {
+                  "uri": "src/main/java/com/example/facade/StorageFacadeImpl.java"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Constructing a path or URI using the tainted value \"url + fileName\". This may allow an attacker to access, modify, or test the existence of critical or sensitive files."
+          },
+          "ruleId": "22"
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "startLine": "24"
+                },
+                "artifactLocation": {
+                  "uri": "src/main/java/com/example/facade/StorageFacadeImpl.java"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Constructing a path or URI using the tainted value \"url + fileName\". This may allow an attacker to access, modify, or test the existence of critical or sensitive files."
+          },
+          "ruleId": "22"
+        }
+      ],
       "tool": {
         "driver": {
-          "name": "Coverity Static Analysis Results",
+          "name": "Synopsys Workflow Engine Reports",
           "rules": [
             {
-              "id": "440",
-              "shortDescription": {
-                "text": "CWE-440: USELESS_STRING: Useless/non-informative string generated"
-              },
-              "helpUri": "https://cwe.mitre.org/data/definitions/440.html",
               "help": {
-                "text": "CWE-440: The code invokes toString on an array, which will generate a fairly useless result such as [C@16f0472. (<a href=\"/doc/en/spotbugs/sb_checker_ref.html#FB.DMI_INVOKING_TOSTRING_ON_ARRAY\" target=\"_blank\">From SpotBugs description</a>)"
+                "text": "cwe-502 : A user-controllable string is deserialized."
               },
-              "properties": {
-                "category": "SpotBugs: Correctness"
-              },
-              "defaultConfiguration": {
-                "level": "warning"
-              }
-            },
-            {
-              "id": "none",
-              "shortDescription": {
-                "text": "CWE-none: Dm: Dubious method used"
-              },
-              "helpUri": "https://cwe.mitre.org/data/definitions/none.html",
-              "help": {
-                "text": "CWE-none: Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. (<a href=\"/doc/en/spotbugs/sb_checker_ref.html#FB.DM_DEFAULT_ENCODING\" target=\"_blank\">From SpotBugs description</a>)"
-              },
-              "properties": {
-                "category": "SpotBugs: Internationalization"
-              },
-              "defaultConfiguration": {
-                "level": "note"
-              }
-            },
-            {
-              "id": "352",
-              "shortDescription": {
-                "text": "CWE-352: Disabled Spring Security CSRF protection"
-              },
-              "helpUri": "https://cwe.mitre.org/data/definitions/352.html",
-              "help": {
-                "text": "CWE-352: The Spring Security CSRF protection is disabled."
-              },
-              "properties": {
-                "category": "Medium impact security"
-              },
-              "defaultConfiguration": {
-                "level": "warning"
-              }
-            },
-            {
-              "id": "404",
-              "shortDescription": {
-                "text": "CWE-404: Resource leak on an exceptional path"
-              },
-              "helpUri": "https://cwe.mitre.org/data/definitions/404.html",
-              "help": {
-                "text": "CWE-404: Leak of a system resource on an exception path (probably error handling)"
-              },
-              "properties": {
-                "category": "Exceptional resource leaks"
-              },
-              "defaultConfiguration": {
-                "level": "note"
-              }
-            },
-            {
               "id": "502",
               "shortDescription": {
-                "text": "CWE-502: Unsafe deserialization"
+                "text": "CWE-502: unsafe deserialization"
               },
               "helpUri": "https://cwe.mitre.org/data/definitions/502.html",
-              "help": {
-                "text": "CWE-502: A user-controllable string is deserialized."
-              },
               "properties": {
                 "category": "High impact security"
               },
@@ -88,14 +178,14 @@
               }
             },
             {
+              "help": {
+                "text": "cwe-79 : Untrusted user-supplied data is inserted into a context that can execute JavaScript without adequate validation, escaping, or filtering."
+              },
               "id": "79",
               "shortDescription": {
-                "text": "CWE-79: Cross-site scripting"
+                "text": "CWE-79: cross-site scripting"
               },
               "helpUri": "https://cwe.mitre.org/data/definitions/79.html",
-              "help": {
-                "text": "CWE-79: Untrusted user-supplied data is inserted into a context that can execute JavaScript without adequate validation, escaping, or filtering."
-              },
               "properties": {
                 "category": "High impact security"
               },
@@ -104,30 +194,30 @@
               }
             },
             {
-              "id": "313",
-              "shortDescription": {
-                "text": "CWE-313: Cleartext sensitive data in a database"
-              },
-              "helpUri": "https://cwe.mitre.org/data/definitions/313.html",
               "help": {
-                "text": "CWE-313: Storing unencrypted sensitive data to a database."
+                "text": "cwe-352 : The web application controller modifies data or state and is unprotected from cross-site request forgery."
               },
+              "id": "352",
+              "shortDescription": {
+                "text": "CWE-352: cross-site request forgery"
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/352.html",
               "properties": {
-                "category": "Medium impact security"
+                "category": "High impact security"
               },
               "defaultConfiguration": {
-                "level": "warning"
+                "level": "error"
               }
             },
             {
+              "help": {
+                "text": "cwe-89 : Untrusted user-supplied data is inserted into a SQL statement without adequate validation, escaping, or filtering."
+              },
               "id": "89",
               "shortDescription": {
-                "text": "CWE-89: SQL injection"
+                "text": "CWE-89: sql injection"
               },
               "helpUri": "https://cwe.mitre.org/data/definitions/89.html",
-              "help": {
-                "text": "CWE-89: Untrusted user-supplied data is inserted into a SQL statement without adequate validation, escaping, or filtering."
-              },
               "properties": {
                 "category": "High impact security"
               },
@@ -136,30 +226,14 @@
               }
             },
             {
-              "id": "476",
-              "shortDescription": {
-                "text": "CWE-476: Dereference null return value"
-              },
-              "helpUri": "https://cwe.mitre.org/data/definitions/476.html",
               "help": {
-                "text": "CWE-476: Return value of function which returns null is dereferenced without checking"
+                "text": "cwe-22 : A user-controllable string is used as part or all of a filesystem path, filename, or URI (uniform resource identifier)."
               },
-              "properties": {
-                "category": "Null pointer dereferences"
-              },
-              "defaultConfiguration": {
-                "level": "warning"
-              }
-            },
-            {
               "id": "22",
               "shortDescription": {
-                "text": "CWE-22: Filesystem path, filename, or URI manipulation"
+                "text": "CWE-22: filesystem path, filename, or uri manipulation"
               },
               "helpUri": "https://cwe.mitre.org/data/definitions/22.html",
-              "help": {
-                "text": "CWE-22: A user-controllable string is used as part or all of a filesystem path, filename, or URI (uniform resource identifier)."
-              },
               "properties": {
                 "category": "High impact security"
               },
@@ -169,370 +243,7 @@
             }
           ]
         }
-      },
-      "results": [
-        {
-          "level": "warning",
-          "message": {
-            "text": "Invocation of toString on command."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/bean/FileUntrustedParent.java"
-                },
-                "region": {
-                  "startLine": 27
-                }
-              }
-            }
-          ],
-          "ruleId": "440"
-        },
-        {
-          "level": "note",
-          "message": {
-            "text": "Found reliance on default encoding: new java.io.InputStreamReader(InputStream)."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/bean/FileUntrustedParent.java"
-                },
-                "region": {
-                  "startLine": 30
-                }
-              }
-            }
-          ],
-          "ruleId": "none"
-        },
-        {
-          "level": "warning",
-          "message": {
-            "text": "The Spring Security CSRF protection is disabled."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/config/SecurityConfig.java"
-                },
-                "region": {
-                  "startLine": 41
-                }
-              }
-            }
-          ],
-          "ruleId": "352"
-        },
-        {
-          "level": "note",
-          "message": {
-            "text": "Failing to save or close resource created by \"new java.io.FileInputStream(file)\" leaks it."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/controllers/DashboardController.java"
-                },
-                "region": {
-                  "startLine": 84
-                }
-              }
-            }
-          ],
-          "ruleId": "404"
-        },
-        {
-          "level": "note",
-          "message": {
-            "text": "Variable \"fos\" going out of scope leaks the resource it refers to."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/controllers/DashboardController.java"
-                },
-                "region": {
-                  "startLine": 122
-                }
-              }
-            }
-          ],
-          "ruleId": "404"
-        },
-        {
-          "level": "note",
-          "message": {
-            "text": "Failing to save or close resource created by \"new java.io.FileInputStream(tmpFile)\" leaks it."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/controllers/DashboardController.java"
-                },
-                "region": {
-                  "startLine": 128
-                }
-              }
-            }
-          ],
-          "ruleId": "404"
-        },
-        {
-          "level": "error",
-          "message": {
-            "text": "A tainted value \"file.getInputStream()\" is deserialized. This may allow an attacker to bypass security checks or execute arbitrary code."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/controllers/DashboardController.java"
-                },
-                "region": {
-                  "startLine": 143
-                }
-              }
-            }
-          ],
-          "ruleId": "502"
-        },
-        {
-          "level": "error",
-          "message": {
-            "text": "Concatenating \"file.getOriginalFilename()\" to an HTML page allows cross-site scripting, because it was not properly sanitized for context HTML PCDATA block."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/controllers/DashboardController.java"
-                },
-                "region": {
-                  "startLine": 147
-                }
-              }
-            }
-          ],
-          "ruleId": "79"
-        },
-        {
-          "level": "note",
-          "message": {
-            "text": "Variable \"fos\" going out of scope leaks the resource it refers to."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/controllers/DashboardController.java"
-                },
-                "region": {
-                  "startLine": 163
-                }
-              }
-            }
-          ],
-          "ruleId": "404"
-        },
-        {
-          "level": "note",
-          "message": {
-            "text": "Failing to save or close resource created by \"new java.io.FileInputStream(tmpFile)\" leaks it."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/controllers/DashboardController.java"
-                },
-                "region": {
-                  "startLine": 170
-                }
-              }
-            }
-          ],
-          "ruleId": "404"
-        },
-        {
-          "level": "error",
-          "message": {
-            "text": "\"com.example.controllers.TransferController.transfer\" is a web-app entry point that requires protection from cross-site request forgery (CSRF)."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/controllers/TransferController.java"
-                },
-                "region": {
-                  "startLine": 65
-                }
-              }
-            }
-          ],
-          "ruleId": "352"
-        },
-        {
-          "level": "error",
-          "message": {
-            "text": "\"com.example.controllers.TransferController.transferCheck\" is a web-app entry point that requires protection from cross-site request forgery (CSRF)."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/controllers/TransferController.java"
-                },
-                "region": {
-                  "startLine": 123
-                }
-              }
-            }
-          ],
-          "ruleId": "352"
-        },
-        {
-          "level": "warning",
-          "message": {
-            "text": "Leaking an authentication token \"str\". Passing it to \"org.springframework.jdbc.core.JdbcTemplate.query\" either stores it to a database or suggests that it is stored in a database."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/dao/AccountDaoImpl.java"
-                },
-                "region": {
-                  "startLine": 35
-                }
-              }
-            }
-          ],
-          "ruleId": "313"
-        },
-        {
-          "level": "error",
-          "message": {
-            "text": "Insecure concatenation of a SQL statement. The value \"username\" is tainted."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/dao/AccountDaoImpl.java"
-                },
-                "region": {
-                  "startLine": 40
-                }
-              }
-            }
-          ],
-          "ruleId": "89"
-        },
-        {
-          "level": "error",
-          "message": {
-            "text": "Insecure concatenation of a SQL statement. The value \"number\" is tainted."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/dao/ActivityDaoImpl.java"
-                },
-                "region": {
-                  "startLine": 20
-                }
-              }
-            }
-          ],
-          "ruleId": "89"
-        },
-        {
-          "level": "warning",
-          "message": {
-            "text": "Calling a method on null object \"this.getClass().getClassLoader().getResource(\"\")\"."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/facade/StorageFacadeImpl.java"
-                },
-                "region": {
-                  "startLine": 14
-                }
-              }
-            }
-          ],
-          "ruleId": "476"
-        },
-        {
-          "level": "error",
-          "message": {
-            "text": "Constructing a path or URI using the tainted value \"url + fileName\". This may allow an attacker to access, modify, or test the existence of critical or sensitive files."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/facade/StorageFacadeImpl.java"
-                },
-                "region": {
-                  "startLine": 18
-                }
-              }
-            }
-          ],
-          "ruleId": "22"
-        },
-        {
-          "level": "error",
-          "message": {
-            "text": "Constructing a path or URI using the tainted value \"url + fileName\". This may allow an attacker to access, modify, or test the existence of critical or sensitive files."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/facade/StorageFacadeImpl.java"
-                },
-                "region": {
-                  "startLine": 24
-                }
-              }
-            }
-          ],
-          "ruleId": "22"
-        },
-        {
-          "level": "warning",
-          "message": {
-            "text": "Calling a method on null object \"org.springframework.web.context.request.RequestContextHolder.getRequestAttributes()\"."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/main/java/org/hdivsamples/security/CustomAuthenticationProvider.java"
-                },
-                "region": {
-                  "startLine": 34
-                }
-              }
-            }
-          ],
-          "ruleId": "476"
-        }
-      ]
+      }
     }
   ]
 }
