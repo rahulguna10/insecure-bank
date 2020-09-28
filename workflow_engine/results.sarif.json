@@ -3,7 +3,94 @@
   "version": "2.1.0",
   "runs": [
     {
-      "results": [
+      "tool": {
+        "driver": {
+          "name": "Synopsys Workflow Engine Reports",
+          "rules": [
+            {
+              "help": {
+                "text": "cwe-502 : A user-controllable string is deserialized."
+              },
+              "id": "502",
+              "shortDescription": {
+                "text": "CWE-502: unsafe deserialization"
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/502.html",
+              "properties": {
+                "category": "High impact security"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "help": {
+                "text": "cwe-79 : Untrusted user-supplied data is inserted into a context that can execute JavaScript without adequate validation, escaping, or filtering."
+              },
+              "id": "79",
+              "shortDescription": {
+                "text": "CWE-79: cross-site scripting"
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/79.html",
+              "properties": {
+                "category": "High impact security"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "help": {
+                "text": "cwe-352 : The web application controller modifies data or state and is unprotected from cross-site request forgery."
+              },
+              "id": "352",
+              "shortDescription": {
+                "text": "CWE-352: cross-site request forgery"
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/352.html",
+              "properties": {
+                "category": "High impact security"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "help": {
+                "text": "cwe-89 : Untrusted user-supplied data is inserted into a SQL statement without adequate validation, escaping, or filtering."
+              },
+              "id": "89",
+              "shortDescription": {
+                "text": "CWE-89: sql injection"
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/89.html",
+              "properties": {
+                "category": "High impact security"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "help": {
+                "text": "cwe-22 : A user-controllable string is used as part or all of a filesystem path, filename, or URI (uniform resource identifier)."
+              },
+              "id": "22",
+              "shortDescription": {
+                "text": "CWE-22: filesystem path, filename, or uri manipulation"
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/22.html",
+              "properties": {
+                "category": "High impact security"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            }
+          ]
+        }
+      },
+	  "results": [
         {
           "level": "error",
           "locations": [
@@ -156,94 +243,7 @@
           },
           "ruleId": "22"
         }
-      ],
-      "tool": {
-        "driver": {
-          "name": "Synopsys Workflow Engine Reports",
-          "rules": [
-            {
-              "help": {
-                "text": "cwe-502 : A user-controllable string is deserialized."
-              },
-              "id": "502",
-              "shortDescription": {
-                "text": "CWE-502: unsafe deserialization"
-              },
-              "helpUri": "https://cwe.mitre.org/data/definitions/502.html",
-              "properties": {
-                "category": "High impact security"
-              },
-              "defaultConfiguration": {
-                "level": "error"
-              }
-            },
-            {
-              "help": {
-                "text": "cwe-79 : Untrusted user-supplied data is inserted into a context that can execute JavaScript without adequate validation, escaping, or filtering."
-              },
-              "id": "79",
-              "shortDescription": {
-                "text": "CWE-79: cross-site scripting"
-              },
-              "helpUri": "https://cwe.mitre.org/data/definitions/79.html",
-              "properties": {
-                "category": "High impact security"
-              },
-              "defaultConfiguration": {
-                "level": "error"
-              }
-            },
-            {
-              "help": {
-                "text": "cwe-352 : The web application controller modifies data or state and is unprotected from cross-site request forgery."
-              },
-              "id": "352",
-              "shortDescription": {
-                "text": "CWE-352: cross-site request forgery"
-              },
-              "helpUri": "https://cwe.mitre.org/data/definitions/352.html",
-              "properties": {
-                "category": "High impact security"
-              },
-              "defaultConfiguration": {
-                "level": "error"
-              }
-            },
-            {
-              "help": {
-                "text": "cwe-89 : Untrusted user-supplied data is inserted into a SQL statement without adequate validation, escaping, or filtering."
-              },
-              "id": "89",
-              "shortDescription": {
-                "text": "CWE-89: sql injection"
-              },
-              "helpUri": "https://cwe.mitre.org/data/definitions/89.html",
-              "properties": {
-                "category": "High impact security"
-              },
-              "defaultConfiguration": {
-                "level": "error"
-              }
-            },
-            {
-              "help": {
-                "text": "cwe-22 : A user-controllable string is used as part or all of a filesystem path, filename, or URI (uniform resource identifier)."
-              },
-              "id": "22",
-              "shortDescription": {
-                "text": "CWE-22: filesystem path, filename, or uri manipulation"
-              },
-              "helpUri": "https://cwe.mitre.org/data/definitions/22.html",
-              "properties": {
-                "category": "High impact security"
-              },
-              "defaultConfiguration": {
-                "level": "error"
-              }
-            }
-          ]
-        }
-      }
+      ]
     }
   ]
 }
