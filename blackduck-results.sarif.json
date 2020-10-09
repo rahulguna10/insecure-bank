@@ -1,0 +1,141 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Blackduck SCA Results",
+          "rules": [
+            {
+              "id": "502",
+              "shortDescription": {
+                "text": "CWE-502: USELESS_STRING: Useless/non-informative string generated"
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/502.html",
+              "help": {
+                "text": "CWE-502: The code invokes toString on an array, which will generate a fairly useless result such as [C@16f0472. (<a href=\"/doc/en/spotbugs/sb_checker_ref.html#FB.DMI_INVOKING_TOSTRING_ON_ARRAY\" target=\"_blank\">From SpotBugs description</a>)"
+              },
+              "properties": {
+                "category": "SpotBugs: Correctness"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "91",
+              "shortDescription": {
+                "text": "CWE-91: Disabled Spring Security CSRF protection"
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/91.html",
+              "help": {
+                "text": "CWE-91: The Spring Security CSRF protection is disabled."
+              },
+              "properties": {
+                "category": "Medium impact security"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+			{
+              "id": "611",
+              "shortDescription": {
+                "text": "CWE-611: Dereference null return value"
+              },
+              "helpUri": "https://cwe.mitre.org/data/definitions/611.html",
+              "help": {
+                "text": "CWE-611: The Spring Security CSRF protection is disabled."
+              },
+              "properties": {
+                "category": "Medium impact security"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "level": "warning",
+          "message": {
+            "text": "Apache log4j Version 1.2.17 - BDSA-2020-1398"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "NA"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "502"
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Apache log4j Version 1.2.17 - BDSA-2017-0180"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "NA"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "502"
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "dom4j: flexible XML framework for Java Version 1.6.1 - BDSA-2018-2898"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "NA"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "91"
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "dom4j: flexible XML framework for Java Version 1.6.1 - BDSA-2019-4386"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "NA"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "611"
+        }
+      ]
+    }
+  ]
+}
