@@ -5,7 +5,7 @@
     {
       "tool": {
         "driver": {
-          "name": "Blackduck SCA Results",
+          "name": "Blackduck Container Vulnerablity Report",
           "rules": [
             {
               "id": "502",
@@ -68,7 +68,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "NA"
+                  "uri": "Dockerfile"
                 },
                 "region": {
                   "startLine": 1
@@ -87,7 +87,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "NA"
+                  "uri": "Dockerfile"
                 },
                 "region": {
                   "startLine": 1
@@ -106,7 +106,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "NA"
+                  "uri": "Dockerfile"
                 },
                 "region": {
                   "startLine": 1
@@ -125,7 +125,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "NA"
+                  "uri": "Dockerfile"
                 },
                 "region": {
                   "startLine": 1
