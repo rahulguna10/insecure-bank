@@ -119,7 +119,7 @@
         {
           "level": "error",
           "message": {
-            "text": "dom4j: flexible XML framework for Java Version 1.6.1 - BDSA-2019-4386 \nRemediation:\n Hello this is the remediation. Hello this is the remediation. Hello this is the remediation"
+            "text": "dom4j: flexible XML framework for Java Version 1.6.1 - BDSA-2019-4386 \n\nRemediation:\n Hello this is the remediation. Hello this is the remediation. Hello this is the remediation"
           },
           "locations": [
             {
