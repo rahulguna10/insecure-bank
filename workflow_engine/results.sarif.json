@@ -239,7 +239,7 @@
             }
           ],
           "message": {
-            "text": "Constructing a path or URI using the tainted value \"url + fileName\". This may allow an attacker to access, modify, or test the existence of critical or sensitive files. \n Remediation -- > \n Path manipulation vulnerabilities can be addressed by proper input validation. Blacklisting characters that allow unsafe path traversal can improve the safety of the input, but the recommended approach is to whitelist the set of expected characters. This should exclude absolute paths and upward directory traversal."
+            "text": "Constructing a path or URI using the tainted value \"url + fileName\". This may allow an attacker to access, modify, or test the existence of critical or sensitive files. Remediation: Path manipulation vulnerabilities can be addressed by proper input validation. Blacklisting characters that allow unsafe path traversal can improve the safety of the input, but the recommended approach is to whitelist the set of expected characters. This should exclude absolute paths and upward directory traversal."
           },
           "ruleId": "22"
         }
