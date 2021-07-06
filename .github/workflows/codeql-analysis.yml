@@ -42,11 +42,11 @@ jobs:
     #- name: Run Workflow Engine
     #  run: java -jar ${{github.workspace}}/workflow_engine/WorkflowClient.jar --workflowengine.url="${{secrets.WORKFLOWENGINE_URL}}" --workflowengine.token="${{secrets.WORKFLOWENGINE_TOKEN}}" --app.manifest.path=${{github.workspace}}/workflow_engine/app.yml --sec.manifest.path=${{github.workspace}}/workflow_engine/workflow.yml
     
-    - name: Upload SARIF file
-      uses: github/codeql-action/upload-sarif@v1
-      with:
+    #- name: Upload SARIF file
+    #  uses: github/codeql-action/upload-sarif@v1
+    #  with:
         # Path to SARIF file relative to the root of the repository
-        sarif_file: ${{github.workspace}}/blackduck-results.sarif.json
+    #    sarif_file: ${{github.workspace}}/blackduck-results.sarif.json
         
     - name: Upload Blackduck SCA Report
       uses: github/codeql-action/upload-sarif@v1
