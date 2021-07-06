@@ -87,7 +87,7 @@
                   "uri": "pom.xml"
                 },
                 "region": {
-                  "startLine": 248
+                  "startLine": 103
                 }
               }
             }
@@ -106,7 +106,7 @@
                   "uri": "pom.xml"
                 },
                 "region": {
-                  "startLine": 145
+                  "startLine": 120
                 }
               }
             }
@@ -125,7 +125,7 @@
                   "uri": "pom.xml"
                 },
                 "region": {
-                  "startLine": 140
+                  "startLine": 193
                 }
               }
             }
@@ -144,7 +144,7 @@
                   "uri": "pom.xml"
                 },
                 "region": {
-                  "startLine": 128
+                  "startLine": 205
                 }
               }
             }
