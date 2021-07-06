@@ -10,7 +10,7 @@
             {
               "id": "2016-1700",
               "shortDescription": {
-                "text": "bdsa-2016-1700: spring framework:4.2.3.RELEASE"
+                "text": "CVE-2016-1700: spring framework:4.2.3.RELEASE"
               },
               "helpUri": "https://www.cvedetails.com/cve/CVE-2016-1700/",
               "help": {
