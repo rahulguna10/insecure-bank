@@ -1,4 +1,4 @@
-name: "CodeQL"
+name: "Synopsys IO Scan"
 
 on:
   push:
@@ -47,3 +47,9 @@ jobs:
       with:
         # Path to SARIF file relative to the root of the repository
         sarif_file: ${{github.workspace}}/blackduck-results.sarif.json
+        
+    - name: Upload Blackduck SCA Report
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        # Path to SARIF file relative to the root of the repository
+        sarif_file: ${{github.workspace}}/blackduck-sca-results.sarif.json
